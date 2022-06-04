@@ -19,16 +19,23 @@ namespace WeatherApp
             InitializeComponent();
         }
 
-        private async void GetWeatherInfo()
+        protected async override void OnAppearing()
         {
-            var location = Geolocation.GetLocationAsync();
+            BindingContext = await GetWeatherInfo();
+        }
+
+        private async Task<OpenWeatherInfo>GetWeatherInfo()
+        {
+           // var location = Geolocation.GetLocationAsync();
 
             var client = new HttpClient();
 
             client.DefaultRequestHeaders.Add("Accept", "application/json");
-            var response = await client.GetStringAsync("https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6da8fe4c36aa7ecc16ea9a9fd68abc1");
+            var response = await client.GetStringAsync("https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&units=metric&appid=b6da8fe4c36aa7ecc16ea9a9fd68abc1");
 
             var weatherInfo = JsonConvert.DeserializeObject<OpenWeatherInfo>(response);
+
+            return weatherInfo;
         }
     }
 }
