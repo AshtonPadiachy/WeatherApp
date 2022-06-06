@@ -21,6 +21,10 @@ namespace WeatherApp
 
         protected async override void OnAppearing()
         {
+            base.OnAppearing();
+
+            //var response = await base.GetWeatherInfo();
+
             BindingContext = await GetWeatherInfo();
         }
 
