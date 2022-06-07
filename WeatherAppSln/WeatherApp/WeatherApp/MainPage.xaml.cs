@@ -30,6 +30,18 @@ namespace WeatherApp
 
         private async Task<OpenWeatherInfo>GetWeatherInfo()
         {
+
+            var details = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
+            if (details != PermissionStatus.Granted)
+            {
+                var newdetail = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+            }
+
+            var location = await Geolocation.GetLocationAsync();
+
+            var latitude= location.Latitude;
+            var longitude= location.Longitude;
+
            // var location = Geolocation.GetLocationAsync();
 
             var client = new HttpClient();
