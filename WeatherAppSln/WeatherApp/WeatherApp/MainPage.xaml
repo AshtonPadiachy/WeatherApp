@@ -21,11 +21,11 @@
                         <StackLayout Orientation="Horizontal" Spacing="50" HorizontalOptions="Center">
                             <StackLayout VerticalOptions="Center">
                                 <Image Source="cloudy.png" WidthRequest="67" HeightRequest="50"/>
-                                <Label Text="Cloudy" TextColor="White" FontSize="13" HorizontalOptions="Center"/>
+           
                             </StackLayout>
                             <StackLayout VerticalOptions="Center">
-                                <Label Text="Bellville" TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label x:Name="dateTxt" Text="MONDAY, JUN 2" TextColor="White" FontSize="13" HorizontalOptions="Center"/>
+                                <Label Text="University of Western Cape" TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Text="MONDAY, JUN 2" TextColor="White" FontSize="13" HorizontalOptions="Center"/>
                         </StackLayout>
                         </StackLayout>
                         <StackLayout>
