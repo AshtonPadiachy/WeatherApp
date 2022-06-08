@@ -23,9 +23,11 @@ namespace WeatherApp
         {
             base.OnAppearing();
 
-            //var response = await base.GetWeatherInfo();
+            //var response = await GetWeatherInfo();
 
-            BindingContext = await GetWeatherInfo();
+           // BindingContext = response.main;  
+
+           BindingContext = await GetWeatherInfo();
         }
 
         private async Task<OpenWeatherInfo>GetWeatherInfo()
@@ -47,7 +49,7 @@ namespace WeatherApp
             var client = new HttpClient();
 
             client.DefaultRequestHeaders.Add("Accept", "application/json");
-            var response = await client.GetStringAsync("https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&units=metric&appid=b6da8fe4c36aa7ecc16ea9a9fd68abc1");
+            var response = await client.GetStringAsync("https://api.openweathermap.org/data/2.5/weather?lat=-33&lon=18&units=metric&appid=b6da8fe4c36aa7ecc16ea9a9fd68abc1");
 
             var weatherInfo = JsonConvert.DeserializeObject<OpenWeatherInfo>(response);
 

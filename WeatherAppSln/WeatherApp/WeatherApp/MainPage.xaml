@@ -10,22 +10,18 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid RowSpacing="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <BoxView Grid.RowSpan="2" BackgroundColor="LightBlue" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-                <Image Aspect="AspectFill" Grid.RowSpan="2" Source="bgimage.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Aspect="AspectFill" Grid.RowSpan="2" Source="bgimage.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
             <Grid Grid.Row="1">
-                    <StackLayout Spacing="20">
-                        <StackLayout Orientation="Horizontal" Spacing="50" HorizontalOptions="Center">
+                    <StackLayout Spacing="10">
+                        <StackLayout Orientation="Horizontal" Spacing="40" HorizontalOptions="Center">
+                           
                             <StackLayout VerticalOptions="Center">
-                                <Image Source="cloudy.png" WidthRequest="67" HeightRequest="50"/>
-           
-                            </StackLayout>
-                            <StackLayout VerticalOptions="Center">
-                                <Label Text="University of Western Cape" TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Text="MONDAY, JUN 2" TextColor="White" FontSize="13" HorizontalOptions="Center"/>
+                                <Label Text="University of Western Cape" TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Padding="15"/>
+                            <Image Source="cloudy.png" HorizontalOptions="Center"/>
                         </StackLayout>
                         </StackLayout>
                         <StackLayout>
@@ -33,10 +29,10 @@
                                 <Label Text="{Binding main.temp}" TextColor="White" FontSize="70" FontAttributes="Bold" VerticalOptions="Center"/>
                                 <Label Text="°C" TextColor="White" FontSize="34" VerticalOptions="Center"/>
                             </StackLayout>
-                        <Label Text="" WidthRequest="320" HeightRequest="400" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                        <Label Text="" WidthRequest="320" HeightRequest="390" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                     </StackLayout>
                         
-                        <Frame Background="#014588" CornerRadius="45" Margin="5,5,5,5">
+                        <Frame Background="#014588" CornerRadius="45" Margin="5,-5,5,5">
                         <Grid WidthRequest="320" ColumnSpacing="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                             
 
@@ -48,7 +44,7 @@
                         </Grid.ColumnDefinitions>
                         <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
                             <Image Source="humidity.png" HeightRequest="25" HorizontalOptions="Center"/>
-                            <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <StackLayout HorizontalOptions="CenterAndExpand">
                                 <Label Text="{Binding main.humidity}"  TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="%" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="Humidity" TextColor="White" Margin="0,-5,0,0" FontSize="11" HorizontalOptions="Center"/>
@@ -56,7 +52,7 @@
                         </StackLayout>
                         <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
                             <Image Source="wind.png" HeightRequest="25" HorizontalOptions="Center"/>
-                            <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <StackLayout HorizontalOptions="CenterAndExpand">
                                 <Label Text="{Binding wind.speed}" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="m/s" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="Wind speed" TextColor="White" Margin="0,-5,0,0" FontSize="11" HorizontalOptions="Center"/>
@@ -64,15 +60,15 @@
                         </StackLayout>
                         <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
                             <Image Source="gauge.png" HeightRequest="25" HorizontalOptions="Center"/>
-                            <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <StackLayout HorizontalOptions="CenterAndExpand">
                                 <Label Text="{Binding main.pressure}" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                                <Label Text="hpa" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="mb" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="Pressure" TextColor="White" Margin="0,-5,0,0" FontSize="11" HorizontalOptions="Center"/>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
                             <Image Source="cloudcover.png" HeightRequest="25" HorizontalOptions="Center"/>
-                            <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <StackLayout HorizontalOptions="CenterAndExpand">
                                 <Label Text="{Binding clouds.all}" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="%" TextColor="White" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
                                 <Label Text="Cloud Cover" TextColor="White" Margin="0,-5,0,0" FontSize="11" HorizontalOptions="Center"/>
