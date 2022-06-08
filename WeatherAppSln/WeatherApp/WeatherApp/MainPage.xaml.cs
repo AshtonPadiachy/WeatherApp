@@ -49,7 +49,10 @@ namespace WeatherApp
             var client = new HttpClient();
 
             client.DefaultRequestHeaders.Add("Accept", "application/json");
-            var response = await client.GetStringAsync("https://api.openweathermap.org/data/2.5/weather?lat=-33&lon=18&units=metric&appid=b6da8fe4c36aa7ecc16ea9a9fd68abc1");
+
+            string url = $"https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&units=metric&appid=b6da8fe4c36aa7ecc16ea9a9fd68abc1";
+
+            var response = await client.GetStringAsync(url);
 
             var weatherInfo = JsonConvert.DeserializeObject<OpenWeatherInfo>(response);
 
