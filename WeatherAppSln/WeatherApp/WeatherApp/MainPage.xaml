@@ -20,9 +20,11 @@
                         <StackLayout Orientation="Horizontal" Spacing="40" HorizontalOptions="Center">
                            
                             <StackLayout VerticalOptions="Center">
-                            <Label Text="Bellville" TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Padding="15"/>
+                            <Label Text="What is the Weather today?" TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Padding="15"/>
                             
                             <Image Source="cloudy.png" HorizontalOptions="Center"/>
+
+                            <Label Text="{Binding sys.country}" TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Padding="15"/>
                         </StackLayout>
                         </StackLayout>
                     
@@ -31,7 +33,7 @@
                                 <Label Text="{Binding main.temp}" TextColor="White" FontSize="70" FontAttributes="Bold" VerticalOptions="Center"/>
                                 <Label Text="°C" TextColor="White" FontSize="34" VerticalOptions="Center"/>
                             </StackLayout>
-                        <Label Text="" WidthRequest="320" HeightRequest="420" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                        <Label Text="" WidthRequest="320" HeightRequest="370" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                     </StackLayout>
                
                     <Frame Background="#014588" CornerRadius="45" Margin="5,-5,5,5">
